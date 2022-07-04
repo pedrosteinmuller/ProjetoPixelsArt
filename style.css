@@ -13,7 +13,22 @@
 
 .color {
   display: inline-block;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   border: 1px solid black;
 }
+
+.pixel {
+    display: inline-block;
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    margin: 0px;
+  }
+
+#pixel-board {
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    margin: 15px;
+  }
