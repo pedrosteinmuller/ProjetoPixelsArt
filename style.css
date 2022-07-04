@@ -33,6 +33,18 @@
     margin: 15px;
   }
 
-.color-selected{
+.selected .cor1{
     background-color: black;
+}
+
+.cor2 {
+    background-color: #f00;
+}
+
+.cor3 {
+    background-color: #00f;
+}
+
+.cor4 {
+    background-color: #008000;
 }
