@@ -48,6 +48,11 @@
     background-color: #008000;
 }
 
-/* #clear-board {
-  background-color: #f00;
-} */
+#clear-board {
+  background-color: cyan;
+  border-radius: 5px;
+}
+
+.white {
+  background-color: white
+}

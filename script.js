@@ -41,12 +41,6 @@ pixelsPai.addEventListener('click', function(event){
   event.target.style.backgroundColor = corDoElemento;
 })
 
-let botao = document.getElementById('clear-board')
-
-botao.addEventListener('click', function(){
-  console.log('entrei')
-})
-
 let pixels = document.getElementsByClassName('pixel')
 let clearBoardButton = document.getElementById('clear-board')
 
@@ -57,15 +51,26 @@ for (let pixel of pixels){
 })
 
 
-// px = document.querySelector(.pixel)
-// limpar.addEventListener('click', clearBoard);
-// clearboard for let index = 0, index < 0; i +=1
-// px[index].style.backgroundColor = 'white'
+// bonus 10
 
+let inputBoardSize = document.querySelector('#board-size');
+let buttonGenerateBoard = document.querySelector('#generate-board');
 
-
-
-
+buttonGenerateBoard.addEventListener('click', function(){
+  if(inputBoardSize.value === ''){
+    return alert('Board inválido!');
+  } else {
+    let boardSizeNumber = parseInt(inputBoardSize.value);
+    if (boardSizeNumber > 50){
+      boardSizeNumber = 50;
+    };
+    for (let index = 1; index <= (boardSizeNumber * boardSizeNumber); index += 1){
+      let boardNovo = document.createElement('li');
+      boardNovo.className = 'pixel white';
+      board.appendChild(boardNovo);
+    };
+  };
+});
 
 
 
