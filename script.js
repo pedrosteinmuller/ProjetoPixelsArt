@@ -41,39 +41,28 @@ pixelsPai.addEventListener('click', function(event){
   event.target.style.backgroundColor = corDoElemento;
 })
 
+let botao = document.getElementById('clear-board')
 
+botao.addEventListener('click', function(){
+  console.log('entrei')
+})
 
+let pixels = document.getElementsByClassName('pixel')
+let clearBoardButton = document.getElementById('clear-board')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+clearBoardButton.addEventListener('click', function(clearBoardButton){
+for (let pixel of pixels){
+  pixel.style.backgroundColor = 'white';
+}
+})
 
 
 // px = document.querySelector(.pixel)
 // limpar.addEventListener('click', clearBoard);
 // clearboard for let index = 0, index < 0; i +=1
 // px[index].style.backgroundColor = 'white'
+
+
 
 
 

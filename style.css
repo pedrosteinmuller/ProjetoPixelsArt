@@ -1,7 +1,6 @@
 * {
   padding: 0;
   margin: 0;
-  border: 0;
   position: relative;
   text-align: center;
 }
@@ -28,9 +27,9 @@
 
 #pixel-board {
     display: inline-block;
-    width: 250px;
-    height: 250px;
-    margin: 15px;
+    width: 210px;
+    height: 210px;
+    line-height: 0;
   }
 
 .selected .cor1{
@@ -48,3 +47,7 @@
 .cor4 {
     background-color: #008000;
 }
+
+/* #clear-board {
+  background-color: #f00;
+} */
