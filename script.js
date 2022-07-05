@@ -31,118 +31,69 @@ for (let index = 0; index < colors.length; index += 1) {
   });
 }
 
+let selected = document.getElementsByClassName('selected');
+let pixelsPai = document.getElementById('pixel-board');
 
-let selected = document.getElementsByClassName('selected')
-let pixelsPai = document.getElementById('pixel-board')
-
-pixelsPai.addEventListener('click', function(event){
+pixelsPai.addEventListener('click', function (event) {
   // pegar o elemento selecionado e passar o valor da cor para o quadrado clicado
   let corDoElemento = selected[0].style.backgroundColor;
   event.target.style.backgroundColor = corDoElemento;
-})
+});
 
-let pixels = document.getElementsByClassName('pixel')
-let clearBoardButton = document.getElementById('clear-board')
+let pixels = document.getElementsByClassName('pixel');
+let clearBoardButton = document.getElementById('clear-board');
 
-clearBoardButton.addEventListener('click', function(clearBoardButton){
-for (let pixel of pixels){
-  pixel.style.backgroundColor = 'white';
-}
-})
-
+clearBoardButton.addEventListener('click', function (clearBoardButton) {
+  for (let pixel of pixels) {
+    pixel.style.backgroundColor = 'white';
+  }
+});
 
 // bonus 10
 
 let inputBoardSize = document.querySelector('#board-size');
 let buttonGenerateBoard = document.querySelector('#generate-board');
 
-buttonGenerateBoard.addEventListener('click', function(){
-  if(inputBoardSize.value === ''){
+buttonGenerateBoard.addEventListener('click', function () {
+  if (inputBoardSize.value === '') {
     return alert('Board inválido!');
   } else {
     let boardSizeNumber = parseInt(inputBoardSize.value);
-    if (boardSizeNumber > 50){
+    if (boardSizeNumber > 50) {
       boardSizeNumber = 50;
-    };
-    for (let index = 1; index <= (boardSizeNumber * boardSizeNumber - 25); index += 1){
+    }
+    for (
+      let index = 1;
+      index <= boardSizeNumber * boardSizeNumber - 25;
+      index += 1
+    ) {
       let boardNovo = document.createElement('li');
       boardNovo.className = 'pixel white';
       board.appendChild(boardNovo);
-    };
-  };
+    }
+  }
 });
 
-let r = Math.floor(Math.random() * 255)
+// bonus 12
 
+function colorGenerator() {
+  let aleatoryColor = ['rgb(0,0,0)'];
 
+  for (let x = 0; x < 3; x += 1) {
+    let colorRgb = `rgb( ${Math.round(Math.random() * 255)}, ${Math.round(
+      Math.random() * 255
+    )}, ${Math.round(Math.random() * 255)})`;
+    aleatoryColor.push(colorRgb);
+  }
+  return aleatoryColor;
+}
 
+function randomColors() {
+  let cores = document.getElementsByClassName('color');
+  let colorgenerator = colorGenerator();
+  for (let i = 1; i < cores.length; i++) {
+    cores[i].style.backgroundColor = colorgenerator[i];
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// outra forma de resolver o requisito 7, mas nao consegui raciocinar para finalizar, entao segui outra logica para resolucao
-
-// let selected = 'cor1';
-// let color1 = document.querySelector('.cor1');
-// let color2 = document.querySelector('.cor2');
-// let color3 = document.querySelector('.cor3');
-// let color4 = document.querySelector('.cor4');
-
-// color1.addEventListener('click', function() {
-//   color2.classList.remove('selected');
-//   color3.classList.remove('selected');
-//   color4.classList.remove('selected');
-//   color1.classList.add('selected');
-//   selected = 'cor1';
-// });
-
-// color2.addEventListener('click', function() {
-//     color1.classList.remove('selected');
-//     color3.classList.remove('selected');
-//     color4.classList.remove('selected');
-//     color2.classList.add('selected');
-//     selected = 'cor2';
-//   });
-
-//   color3.addEventListener('click', function() {
-//     color1.classList.remove('selected');
-//     color2.classList.remove('selected');
-//     color4.classList.remove('selected');
-//     color3.classList.add('selected');
-//     selected = 'cor3';
-//   });
-
-//   color3.addEventListener('click', function() {
-//     color1.classList.remove('selected');
-//     color2.classList.remove('selected');
-//     color3.classList.remove('selected');
-//     color4.classList.add('selected');
-//     selected = 'cor4';
-//   });
+randomColors();
