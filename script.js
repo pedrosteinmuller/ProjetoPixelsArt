@@ -64,7 +64,7 @@ buttonGenerateBoard.addEventListener('click', function(){
     if (boardSizeNumber > 50){
       boardSizeNumber = 50;
     };
-    for (let index = 1; index <= (boardSizeNumber * boardSizeNumber); index += 1){
+    for (let index = 1; index <= (boardSizeNumber * boardSizeNumber - 25); index += 1){
       let boardNovo = document.createElement('li');
       boardNovo.className = 'pixel white';
       board.appendChild(boardNovo);
@@ -72,7 +72,7 @@ buttonGenerateBoard.addEventListener('click', function(){
   };
 });
 
-
+let r = Math.floor(Math.random() * 255)
 
 
 
