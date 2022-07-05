@@ -31,11 +31,79 @@ for (let index = 0; index < colors.length; index += 1) {
   });
 }
 
-let pixels = document.querySelectorAll('.pixel')
 
-for (let index = 0; index < pixels.length; index += 1) {
+let selected = document.getElementsByClassName('selected')
+let pixelsPai = document.getElementById('pixel-board')
 
-}
+pixelsPai.addEventListener('click', function(event){
+  // pegar o elemento selecionado e passar o valor da cor para o quadrado clicado
+  let corDoElemento = selected[0].style.backgroundColor;
+  event.target.style.backgroundColor = corDoElemento;
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// px = document.querySelector(.pixel)
+// limpar.addEventListener('click', clearBoard);
+// clearboard for let index = 0, index < 0; i +=1
+// px[index].style.backgroundColor = 'white'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -46,6 +114,7 @@ for (let index = 0; index < pixels.length; index += 1) {
 
 
 // outra forma de resolver o requisito 7, mas nao consegui raciocinar para finalizar, entao segui outra logica para resolucao
+
 // let selected = 'cor1';
 // let color1 = document.querySelector('.cor1');
 // let color2 = document.querySelector('.cor2');
